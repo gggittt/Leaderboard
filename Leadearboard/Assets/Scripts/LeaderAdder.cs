@@ -2,55 +2,49 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityRandom = UnityEngine.Random;
 
 
 public class LeaderAdder : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI  _nameText;
-    [SerializeField] private TextMeshProUGUI  _scoreTmpText;
+    [SerializeField] private TextMeshProUGUI _nameText;
+
+    [SerializeField] private TextMeshProUGUI _scoreTmpText;
+
     //[SerializeField] private InputField  _scoreInput;
-    [SerializeField] private Text  _scoreText;
-    
+    [SerializeField] private Text _scoreText;
+
     [SerializeField] private Leaderboard _leaderboard;
 
-    
+
     public void AddNewLeader()
     {
-        string scoreText = _scoreText.text;
-        Debug.Log($"<color=cyan> {scoreText}  </color>");
-        //scoreText = scoreText.Trim();
-        //Debug.Log($"<color=cyan> {newScore}  </color>");
+        var isScoreParsed = float.TryParse(_scoreText.text, out float score);
+        string newName = _nameText.text;
 
-        var isParsed = float.TryParse(scoreText, out float score);
-
-        
-        
-        //var score = Convert.ToInt32(textScore);
-
-        //Debug.Log($"<color=cyan> isParsed = {isParsed}  </color>");
-        Debug.Log($"<color=cyan> {scoreText} = {score}  </color>");
-        Debug.Log($"<color=cyan> name = {_nameText.text}  </color>");
-
-        LogText();
-
-        if (true)
+        if (newName == String.Empty)
         {
-            var newLeader = new Leader(_nameText.text, score);
-            _leaderboard.AddLeader(newLeader);
+            Debug.Log($"<color=cyan> Name can't be empty!  </color>");
+            return;
         }
-        else
+
+        if (isScoreParsed == false)
         {
-            Debug.Log($"<color=cyan> Score insert incorrectly!  </color>");
+            Debug.Log($"<color=cyan> Score insert incorrectly! </color>");
+            return;
         }
+        
+        var highScore = new HighScoreRecord(newName, score);
+        _leaderboard.AddLeaderRecord(highScore);
     }
 
-    private void LogText()
+    public void FillBySample()
     {
-        int.TryParse(_scoreTmpText.text, out int a);
-        Debug.Log($"<color=cyan> int.TryParse ру англ  {a}  </color>");
-        
-        
-        Debug.Log($"<color=green> {_nameText.text}  </color>");
-        Debug.Log($"<color=green> {_scoreText.text}  </color>");
+        _leaderboard.AddLeaderRecord(new HighScoreRecord("Nikolay Dybowski", 
+            UnityRandom.Range(1,999)));
+        _leaderboard.AddLeaderRecord(new HighScoreRecord("Mikhail Shkredov", UnityRandom.Range(50,700)));
+        _leaderboard.AddLeaderRecord(new HighScoreRecord("Hideo Kojima", UnityRandom.Range(1,322)));
+
     }
+    
 }
