@@ -4,15 +4,23 @@ using UnityEngine;
 public class Leaderboard : MonoBehaviour
 {
     public List<Leader> Leaders { get; } = new List<Leader>();
-
-    [SerializeField] private LeaderDrawer _drawer;
+    
     //[SerializeField] private LeaderEditor _editor;
     
+    [SerializeField] private Transform _stringBox;
+    [SerializeField] private UiLeaderString _stringPrefab;
 
-    public void AddLeader(string leaderName, int score)
+    public void AddLeader(Leader leader)
     {
-        Leaders.Add(new Leader(leaderName, score));
-        _drawer.Draw(leaderName, score);
+        Leaders.Add(leader);
+        UiLeaderString uiString = Instantiate(_stringPrefab, _stringBox);
+        uiString.OnDestroy += StringDeleteHandler;
+        uiString.SetInfo(leader);
+    }
+    
+    private void StringDeleteHandler(Leader sender)
+    {
+        Leaders.Remove(sender);
     }
 
     public void EditLeader(string nameInputText, int result)

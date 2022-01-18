@@ -1,20 +1,37 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
+using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-public class UiLeaderString : MonoBehaviour
+public class UiLeaderString : MonoBehaviour, IPointerClickHandler
 {
+    private Leader _data;
+    public event Action<Leader> OnDestroy; 
+    [SerializeField] private TextMeshProUGUI _index;
+    [SerializeField] private TextMeshProUGUI _name;
+    [SerializeField] private TextMeshProUGUI _score;
 
-    [SerializeField] private Text _name;
-    [SerializeField] private Text _score;
-
-    public void SetInfo(string leaderName, int score)
+    public void SetInfo(Leader leader)
     {
-        _name.text = leaderName;
-        _score.text = score.ToString();
+        _data = leader;
+        _name.text = leader.Name;
+        _score.text = leader.Score.ToString();
     }
 
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if (eventData.button == PointerEventData.InputButton.Right)
+        {
+            Delete();
+        }
+    }
+
+    private void Delete()
+    {
+        Debug.Log($"<color=cyan> удаляю {_data.Name}  </color>");
+        OnDestroy?.Invoke(_data);
+        Destroy(gameObject);
+    }
 }
 
 

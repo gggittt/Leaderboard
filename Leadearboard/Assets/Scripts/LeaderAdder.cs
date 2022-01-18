@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,30 +7,50 @@ using UnityEngine.UI;
 public class LeaderAdder : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI  _nameText;
-    [SerializeField] private TMP_InputField _nameInput;
-    [SerializeField] private TextMeshProUGUI  _scoreText;
-    [SerializeField] private TMP_InputField _scoreInput;
+    [SerializeField] private TextMeshProUGUI  _scoreTmpText;
+    //[SerializeField] private InputField  _scoreInput;
+    [SerializeField] private Text  _scoreText;
+    
     [SerializeField] private Leaderboard _leaderboard;
 
+    
     public void AddNewLeader()
     {
-        Debug.Log($"<color=cyan> {_nameInput.GetComponentInChildren<TextMeshProUGUI>().text}  </color>");
-        Debug.Log($"<color=cyan> {_scoreInput.GetComponent<TextMeshProUGUI>().text}  </color>");
-    }
-    /*public void AddNewLeader()
-    {
-        var isParsed = int.TryParse(_scoreInput.text, out int score);
+        string scoreText = _scoreText.text;
+        Debug.Log($"<color=cyan> {scoreText}  </color>");
+        //scoreText = scoreText.Trim();
+        //Debug.Log($"<color=cyan> {newScore}  </color>");
 
-        Debug.Log($"<color=cyan> {isParsed}, {_scoreInput.text} = {score}  </color>");
+        var isParsed = float.TryParse(scoreText, out float score);
 
-        if (isParsed)
+        
+        
+        //var score = Convert.ToInt32(textScore);
+
+        //Debug.Log($"<color=cyan> isParsed = {isParsed}  </color>");
+        Debug.Log($"<color=cyan> {scoreText} = {score}  </color>");
+        Debug.Log($"<color=cyan> name = {_nameText.text}  </color>");
+
+        LogText();
+
+        if (true)
         {
-            _leaderboard.AddLeader(_nameText.text, score);
-            
+            var newLeader = new Leader(_nameText.text, score);
+            _leaderboard.AddLeader(newLeader);
         }
         else
         {
             Debug.Log($"<color=cyan> Score insert incorrectly!  </color>");
         }
-    }*/
+    }
+
+    private void LogText()
+    {
+        int.TryParse(_scoreTmpText.text, out int a);
+        Debug.Log($"<color=cyan> int.TryParse ру англ  {a}  </color>");
+        
+        
+        Debug.Log($"<color=green> {_nameText.text}  </color>");
+        Debug.Log($"<color=green> {_scoreText.text}  </color>");
+    }
 }

@@ -10,7 +10,6 @@
           <e p="Leader.cs" t="Include" />
           <e p="LeaderAdder.cs" t="Include" />
           <e p="Leaderboard.cs" t="Include" />
-          <e p="LeaderDrawer.cs" t="Include" />
           <e p="LeaderEditor.cs" t="Include" />
           <e p="UiLeaderString.cs" t="Include" />
         </e>

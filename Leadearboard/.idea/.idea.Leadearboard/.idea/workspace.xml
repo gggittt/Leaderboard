@@ -20,18 +20,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aabe2af0-0876-469b-b3ab-a5b0fe35ad62" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Leader.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Leader.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/LeaderAdder.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/LeaderDrawer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/LeaderDrawer.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/LeaderEditor.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/LeaderEditor.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Leaderboard.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Leaderboard.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UiLeaderString.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UiLeaderString.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Leadearboard/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Leadearboard/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Name.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Name.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/String.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/String.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Leaderboard.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Leaderboard.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Leader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Leader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LeaderAdder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LeaderAdder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LeaderDrawer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LeaderDrawer.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Leaderboard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Leaderboard.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UiLeaderString.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UiLeaderString.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,15 +39,23 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/62FFEEB7-EC02-4BEA-B61E-5FBF8D44AC5B/d6/425827e7/NumberStyles.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/62FFEEB7-EC02-4BEA-B61E-5FBF8D44AC5B/aa/8401cc35/Int32.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://F:/Unity-2020jan/2019.4.17f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/ExecuteEvents.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4FDAC55D-4ED6-4D00-AFB6-B9826263E05F/4d/24e0b25d/IPointerClickHandler.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/62FFEEB7-EC02-4BEA-B61E-5FBF8D44AC5B/75/e86382a2/String.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/62FFEEB7-EC02-4BEA-B61E-5FBF8D44AC5B/d3/cda94abe/Number.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/UiLeaderString.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/LeaderDrawer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LeaderEditor.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Leader.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Leaderboard.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LeaderAdder.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UiLeaderString.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/LeaderDrawer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Leaderboard.cs" />
       </list>
     </option>
   </component>
@@ -67,6 +73,7 @@
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="RiderCSharpLiveTemplatesSettingsId" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
@@ -97,7 +104,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1642440460877</updated>
-      <workItem from="1642440480793" duration="12692000" />
+      <workItem from="1642440480793" duration="22532000" />
     </task>
     <servers />
   </component>
@@ -121,6 +128,14 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="-1280" y="-22" key="SettingsEditor" timestamp="1642483722048">
+      <screen x="-1280" y="-22" width="1280" height="1024" />
+    </state>
+    <state x="-1280" y="-22" key="SettingsEditor/1920.-77.1920.1040/0.0.1920.1040/-1280.-22.1280.1024@-1280.-22.1280.1024" timestamp="1642483722048" />
+    <state x="-1152" y="217" key="run.anything.popup" timestamp="1642476586288">
+      <screen x="-1280" y="-22" width="1280" height="1024" />
+    </state>
+    <state x="-1152" y="217" key="run.anything.popup/1920.-77.1920.1040/0.0.1920.1040/-1280.-22.1280.1024@-1280.-22.1280.1024" timestamp="1642476586288" />
     <state x="-1147" y="-22" width="1009" height="1470" key="search.everywhere.popup" timestamp="1642443206406">
       <screen x="-1280" y="-22" width="1280" height="1024" />
     </state>
