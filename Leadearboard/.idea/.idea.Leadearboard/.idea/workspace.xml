@@ -20,24 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aabe2af0-0876-469b-b3ab-a5b0fe35ad62" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/test scroll.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/test scroll.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/New Scene.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/New Scene.unity.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/InputInfoGetter.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/InputInfoGetter.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Leadearboard/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Leadearboard/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Leadearboard/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Leadearboard/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/LeaderString.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/LeaderString.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/test scroll.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/test scroll.prefab.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Leaderboard.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Leaderboard.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/HighScoreRecord.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/HighScoreRecord.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/HighScoreUi.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/HighScoreUi.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LeaderAdder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LeaderAdder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LeaderEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LeaderEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Leaderboard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Leaderboard.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/New Scene.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/New Scene.unity.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,10 +61,10 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/HighscoreRecord.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LeaderAdder.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/HighScoreRecord.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/HighScoreUi.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/InputInfoGetter.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LeaderEditor.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Leaderboard.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/HighScoreUi.cs" />
       </list>
     </option>
   </component>
@@ -129,7 +117,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1642440460877</updated>
-      <workItem from="1642440480793" duration="61968000" />
+      <workItem from="1642440480793" duration="62658000" />
     </task>
     <servers />
   </component>
