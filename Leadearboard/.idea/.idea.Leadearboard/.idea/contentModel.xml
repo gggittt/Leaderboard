@@ -9,6 +9,7 @@
         <e p="Scripts" t="Include">
           <e p="HighscoreRecord.cs" t="Include" />
           <e p="HighscoreUi.cs" t="Include" />
+          <e p="InputInfoGetter.cs" t="Include" />
           <e p="LeaderAdder.cs" t="Include" />
           <e p="Leaderboard.cs" t="Include" />
           <e p="LeaderEditor.cs" t="Include" />

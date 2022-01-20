@@ -1,35 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
 public class Leaderboard : MonoBehaviour
 {
-    private readonly List<HighScoreUi> _leaders = new List<HighScoreUi>();
+    private List<HighScoreUi> _leaders = new List<HighScoreUi>();
     private HighScoreUi _selected;
 
     [SerializeField] private Transform _stringBox;
     [SerializeField] private HighScoreUi _stringPrefab;
 
-    private void Start()
-    {
-        foreach (var point in _stringBox.GetComponentsInChildren<HighScoreUi>())
-        {
-            _leaders.Add(point);
-            point.OnSelected += StringSelectHandler;
-            point.OnEdit += StringEditHandler;
-        }
-    }
+    [SerializeField] private LeaderEditor _editor;
+    //когда 2 класса имеют ссылки на друг друга это не верно по архитектуре, но как иначе оформить подписку - не придумал
 
     public void AddLeaderRecord(HighScoreRecord highScoreRecord)
     {
         HighScoreUi highScoreUiString = Instantiate(_stringPrefab, _stringBox);
         highScoreUiString.Init(highScoreRecord);
-        RecomposeIndexesAfterAdd(highScoreUiString);
+        
+        highScoreUiString.OnEdit += _editor.RecordEditHandler;
+        highScoreUiString.OnSelected += RecordSelectHandler;
+        
         _leaders.Add(highScoreUiString);
-        //uiString.OnDestroy += StringDeleteHandler;
-        highScoreUiString.OnSelected += StringSelectHandler;
-        highScoreUiString.OnEdit += StringEditHandler;
+        RecalculateLeaders();
     }
 
     public void DeleteAll()
@@ -37,6 +30,23 @@ public class Leaderboard : MonoBehaviour
         foreach (HighScoreUi point in _leaders.ToList())
         {
             DeleteRecord(point);
+        }
+
+        RecalculateLeaders();
+    }
+
+    private void RecalculateLeaders()
+    {
+        _leaders = GetOrderedRecords();
+
+        List<HighScoreUi> GetOrderedRecords() =>
+            _leaders.OrderBy(item => 
+                item.RecordData.Score).Reverse().ToList();
+
+
+        for (int i = 0; i < _leaders.Count; i++)
+        {
+            _leaders[i].SetIndex(i);
         }
     }
 
@@ -50,55 +60,22 @@ public class Leaderboard : MonoBehaviour
     {
         if (_selected == null)
             return;
-        Debug.Log($"<color=cyan> удаляю {_selected}  </color>");
+
         DeleteRecord(_selected);
-    }
-
-    private void RecomposeIndexesAfterAdd(HighScoreUi current)
-    {
-        var lowerIndexes = new List<HighScoreUi>();
-
-        var resultIndex = _leaders.Count;
-        foreach (HighScoreUi point in _leaders)
-        {
-            if (current.RecordData.Score > point.RecordData.Score)
-            {
-                bool isCurrentHigherInHierarchy = resultIndex > point.RecordData.Index;
-                if (isCurrentHigherInHierarchy)
-                {
-                    resultIndex = point.RecordData.Index;
-                }
-
-                lowerIndexes.Add(point);
-            }
-        }
-
-        foreach (HighScoreUi point in lowerIndexes)
-        {
-            point.ShiftIndex();
-        }
-
-        current.SetIndex(resultIndex);
+        RecalculateLeaders();
     }
     
-
-    private void StringEditHandler(HighScoreRecord obj)
-    {
-        //открыть окно Edit
-        //передать в след логику obj
-    }
-
-    private void StringSelectHandler(HighScoreUi sender)
+    private void RecordSelectHandler(HighScoreUi sender)
     {
         if (_selected != null)
             _selected.Deselect();
-        
+
         _selected = sender;
     }
 
-
-    public void EditLeader(string nameInputText, int result)
+    public void EditLeaderRecord(HighScoreUi oldEditedRecord, HighScoreRecord newRecord)
     {
-        //_editor.EditLeader(nameInputText, result);
+        DeleteRecord(oldEditedRecord);
+        AddLeaderRecord(newRecord);
     }
 }

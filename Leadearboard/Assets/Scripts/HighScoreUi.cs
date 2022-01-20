@@ -6,17 +6,19 @@ using UnityEngine.UI;
 
 public class HighScoreUi : MonoBehaviour, IPointerClickHandler
 {
-    //public event Action<Leader> OnDestroy;
     public event Action<HighScoreUi> OnSelected;
-    public event Action<HighScoreRecord> OnEdit;
+    public event Action<HighScoreUi> OnEdit;
+    
+    public HighScoreRecord RecordData { get; private set; }
+    
     [SerializeField] private TextMeshProUGUI _index;
     [SerializeField] private TextMeshProUGUI _name;
     [SerializeField] private TextMeshProUGUI _score;
     [SerializeField] private Image[] _bg;
     [SerializeField] private Color _selectColor;
+    
     private bool _isSelected;
     private Color _startColor;
-    public HighScoreRecord RecordData { get; private set; }
 
     private void Awake()
     {
@@ -35,7 +37,7 @@ public class HighScoreUi : MonoBehaviour, IPointerClickHandler
         switch (eventData.button)
         {
             case PointerEventData.InputButton.Right:
-                OnEdit?.Invoke(RecordData);
+                OnEdit?.Invoke(this);
                 break;
             case PointerEventData.InputButton.Left when _isSelected:
                 Deselect();
@@ -59,12 +61,16 @@ public class HighScoreUi : MonoBehaviour, IPointerClickHandler
     private void Select()
     {
         OnSelected?.Invoke(this);
-        foreach (var item in _bg)
-        {
-            item.color = _selectColor;
-        }
-
         _isSelected = true;
+        
+        Illuminate();
+        void Illuminate()
+        {
+            foreach (var item in _bg)
+            {
+                item.color = _selectColor;
+            }
+        }
     }
 
     public void ShiftIndex()

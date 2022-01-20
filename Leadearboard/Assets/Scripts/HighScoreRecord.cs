@@ -1,12 +1,10 @@
-﻿
-[System.Serializable]
-public class HighScoreRecord
+﻿public class HighScoreRecord
 {
     public string Name { get; }
-    public float Score { get; }
+    public int Score { get; }
     public int Index { get; set; }
 
-    public HighScoreRecord(string name, float score)
+    public HighScoreRecord(string name, int score)
     {
         Name = name;
         Score = score;

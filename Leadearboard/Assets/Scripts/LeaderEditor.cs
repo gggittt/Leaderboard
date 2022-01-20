@@ -1,26 +1,36 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LeaderEditor : MonoBehaviour
 {
+    [SerializeField] private TextMeshProUGUI _editedName;
+    [SerializeField] private Text _editedScore;
     
-    [SerializeField] private TMP_InputField _nameInput;
-    [SerializeField] private TMP_InputField _scoreInput;
-    [SerializeField] private Leaderboard _leaderboard;
+    [SerializeField] private Transform _editUiPanel;
 
-    
+    [SerializeField] private Leaderboard _leaderboard;
+    private HighScoreUi _oldEditedRecord;
+
 
     public void EditLeader()
     {
-        int.TryParse(_scoreInput.text, out int score);
+        HighScoreRecord newRecord = InputInfoGetter.TryGetInputsInfo(out bool isSuccess, _editedName.text, _editedScore.text);
+
+        if (isSuccess == false)
+            return;
         
-        _leaderboard.EditLeader(_nameInput.text, score);
+        _leaderboard.EditLeaderRecord(_oldEditedRecord, newRecord);
     }
-    
 
+    public void RecordEditHandler(HighScoreUi sender)
+    {
+        _editUiPanel.gameObject.SetActive(true);
+        _oldEditedRecord = sender;
+    }
+
+    public void ResetSelectedToEdit()//from ui button
+    {
+        _oldEditedRecord = null;
+    }
 }
-
-
